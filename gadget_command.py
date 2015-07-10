@@ -18,7 +18,7 @@ import sys
 from device import Device
 
 if __name__ == "__main__":
-    device = Device(device="/dev/ttyUSB1")
+    device = Device(device="/dev/ttyUSB0")
     reader = device.gen_lines(timeout=20)
     for c in sys.argv[1:]:
         print "SENDING:", c
