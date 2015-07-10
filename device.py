@@ -8,12 +8,19 @@ class Device(object):
     """Simple interface to the TURRIS:DONGLE"""
 
     def __init__(self, device="/dev/ttyUSB0"):
+        """
+        Initialize the TURRIS:DONGLE by opening the corresponding device
+        with the proper settings.
+        """
         self.device = device
         self.fd = self.open_device(self.device)
         self._buffer = ""
 
     @classmethod
     def open_device(cls, device):
+        """
+        Open the TURRIS:DONGLE device using the proper settings, such as baudrate, etc.
+        """
         fd = os.open(device, os.O_RDWR)
         baudrate = termios.B57600
         # set termios flags
@@ -34,6 +41,13 @@ class Device(object):
         return fd
 
     def gen_lines(self, timeout=None):
+        """
+        Generator returning individual lines received by the TURRIS:DONGLE.
+
+        Note: Messages are sent more than once by the sensors to protect
+        against data loss. This code does not take care of removing the
+        duplicates, it is up to you.
+        """
         start_time = time.time()
         while True:
             rdb, wtb, xtb = select.select([self.fd], [], [], timeout)
@@ -53,4 +67,8 @@ class Device(object):
                 start_time = time.time()
 
     def send_command(self, command):
+        """
+        Send one command to the TURRIS:DONGLE. The command should conform to
+        the internal protocol of the device
+        """
         os.write(self.fd, "\n"+command+"\n")
