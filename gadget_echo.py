@@ -10,7 +10,7 @@ import datetime
 from device import Device
 
 if __name__ == "__main__":
-    device = Device(device="/dev/ttyUSB0")
+    device = Device(device="/dev/ttyUSB1")
     reader = device.gen_lines()
     while True:
         line = reader.next()

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>TURRIS:GADGETS thermometer</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/dygraph/1.1.1/dygraph-combined.js"></script>
+    </head>
+    <body role="document">
+        <div class="container">
+            <h1>TURRIS:GADGETS thermometer</h1>
+
+            <div id="graphdiv" class="col-xs-10"></div>
+            <div id="labels_div" class="col-xs-2"></div>
+            <script type="text/javascript">
+                var div = document.getElementById("graphdiv");
+
+                g = new Dygraph(
+                      div,
+                      'thermometer.csv',
+                      {
+                          connectSeparatedPoints: true,
+                          labelsDiv: 'labels_div',
+                          labelsSeparateLines: true,
+                          labelsShowZeroValues: true,
+                          legend: 'always',
+                          height: 0.618 * div.clientWidth
+                      }
+                );
+            </script>
+
+            <div class="col-xs-12">
+                <br />
+                <p>This is a demo page for a thermometer using the TURRIS:DONGLE and a wireless
+                    thermometer TP-82N. It displays data from a file <code>thermometer.csv</code>
+                    which should be created by the script <code>thermometer.py</code> which does
+                    the actual communication with the thermometer.</p>
+
+                <p>If you do not see any data here, the code is
+                    either not running or did not produce any data yet. Check that the file
+                    <code>thermometer.csv</code> was created by the script and that it contains
+                    some data.</p>
+
+                <p>This page uses <a href="http://getbootstrap.com/">Twitter Bootstrap</a> for styling and
+                    <a href="http://dygraphs.com/">Dygraphs</a> for the chart.</p>
+            </div>
+        </div>
+    </body>
+</html>
