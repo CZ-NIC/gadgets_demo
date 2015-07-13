@@ -35,9 +35,13 @@ Demos
     Another simple echo client. This time is uses ZeroMQ (a very nice broker-less message queue
     for message transport). See ``zeromq_collect.py`` for more details.
 
+    Requires the pyzmq external library.
+
 ``zeromq_collect.py``
     ZeroMQ client receiving data from ``zeromq_echo.py``. Serves as a demo of an application
     where the messages may be distributed to several clients, courtesy of ZeroMQ.
+
+    Requires the pyzmq external library.
 
 ``device.py``
     Not a demo in itself. This is a simple communication library which is used by the other
