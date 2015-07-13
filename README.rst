@@ -18,6 +18,14 @@ Demos
 ``gadget_echo.py``
     Listen to messages received by the dongle.
 
+``net_echo.py``
+    Listens to messages received by the dongle and passes them to given IP addresses in
+    UDP datagrams. ``net_collect.py`` may be used to capture the messages.
+
+``net_collect.py``
+    Simple client which receives messages sent by ``net_echo.py`` as UDP datagrams and prints
+    them out.
+
 ``thermometer.py``
     Collect temperature measurements from a TP-82N thermometer and store them in a CSV file
     ``thermometer.csv``. Also uses ``thermometer.html`` which may be used to display the
