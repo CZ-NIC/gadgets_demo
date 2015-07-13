@@ -1,3 +1,8 @@
+"""
+Simple listener which receives UDP packets containing messages from
+net_echo.py and prints them out.
+"""
+
 import socket
 import select
 import sys

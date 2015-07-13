@@ -1,3 +1,10 @@
+"""
+Very simple echo program sending data received from the TURRIS:DONGLE to a list
+of selected addresses via UDP datagrams.
+
+See net_collect.py for a simple client example.
+"""
+
 import datetime
 import socket
 import sys
