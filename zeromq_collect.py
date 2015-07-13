@@ -11,4 +11,4 @@ if __name__ == "__main__":
     subscriber.setsockopt(zmq.SUBSCRIBE, "")
     while True:
         date, message = subscriber.recv_json()
-        print date, message
+        print date, message.encode('utf-8')

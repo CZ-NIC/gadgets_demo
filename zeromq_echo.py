@@ -24,7 +24,7 @@ if __name__ == "__main__":
     device = Device(device_name)
     reader = device.gen_lines()
     while True:
-        line = reader.next()
+        line = reader.next().decode('iso-8859-2')  # there might be the degree symbol
         date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         publisher.send_json((date, line))
-        print line
+        print line.encode('utf-8')
