@@ -71,4 +71,4 @@ class Device(object):
         Send one command to the TURRIS:DONGLE. The command should conform to
         the internal protocol of the device
         """
-        os.write(self.fd, "\n"+command+"\n")
+        os.write(self.fd, "\x1B "+command+" \n")
