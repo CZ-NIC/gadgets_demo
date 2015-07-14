@@ -32,7 +32,7 @@ Demos
     collected data in a simple but nice JavaScript chart.
 
 ``zeromq_echo.py``
-    Another simple echo client. This time is uses ZeroMQ (a very nice broker-less message queue
+    Another simple echo client. This time it uses ZeroMQ (a very nice broker-less message queue
     for message transport). See ``zeromq_collect.py`` for more details.
 
     Requires the pyzmq external library.
