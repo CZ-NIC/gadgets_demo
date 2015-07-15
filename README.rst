@@ -46,3 +46,15 @@ Demos
 ``device.py``
     Not a demo in itself. This is a simple communication library which is used by the other
     demos.
+
+
+How to configure Turris for the dongle
+--------------------------------------
+
+The TURRIS:DONGLE uses an USB to serial converter from FTDI. Because of this, the required
+kernel module must be installed for the communication to work and the /dev/ttyUSBx device
+to appear.
+
+The module to install is ``kmod-usb-serial-ftdi``. You can do it from the command line::
+
+    opkg install kmod-usb-serial-ftdi
